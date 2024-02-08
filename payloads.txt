@@ -1,0 +1,74 @@
+TEST 1
+{
+	"payload": { "a": 1, "b": 2 },
+	"possibleDestinations": [
+		{
+			"destination1": true,
+			"destination2": true,
+			"destination3": true
+		}, 
+		{
+			"destination1": true,
+			"destination3": false
+		},
+		{
+			"destination1": true,
+			"destination2": true,
+			"destination4": false
+		},
+		{
+			"destination5": true
+		}
+	]
+}
+
+TEST 2
+{
+	"payload": { "a": 1, "b": 2 },
+	"possibleDestinations": [
+		{
+			"destination1": true,
+			"destination2": true,
+			"destination3": true
+		}, 
+		{
+			"destination1": false,
+			"destination3": false
+		},
+		{
+			"destination1": true,
+			"destination2": false,
+			"destination4": false
+		},
+		{
+			"destination5": true
+		}
+	]
+}
+
+TEST 3
+{
+	"payload": { "a": 1, "b": 2 },
+	"strategy": "() => { return true; }",
+	"possibleDestinations": [
+		{
+			"destination1": true,
+			"destination2": true,
+			"destination3": true
+		}, 
+		{
+			"destination1": true,
+			"destination3": false
+		},
+		{
+			"destination1": true,
+			"destination2": true,
+			"destination4": false
+		},
+		{
+			"destination5": true
+		}
+	]
+}
+
+
