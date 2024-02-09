@@ -3,6 +3,7 @@ import dbClient from './db/initDb.js';
 import {ApiRouter} from './api/_index.js';
 import {errorHandler} from './helpers/error-handler.js';
 import swaggerDocs from './swagger/swagger.js';
+import expressMongoSanitize from 'express-mongo-sanitize';
 
 const DEFAULT_PORT=3000;
 
@@ -13,6 +14,7 @@ await dbClient.connect();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+app.use(expressMongoSanitize({replaceWith: '_'}));
 app.use((req, res, next) => {
     req.startTime = new Date();
     next();
