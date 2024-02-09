@@ -10,46 +10,50 @@
 Clone repository  
 `git clone https://github.com/KondrashovKonstantin/picsiotest.git`  
 
-Navigate to root folder  
+Navigate to the root folder  
 `cd picsiotest`
 
 Run `docker-compose build` to build the app  
 Then run `dockor-compose up -d` to up the app  
   
-You need to run build and up commands after each code changes.  
+You need to run build and up commands after each code change.  
+
+Use `docker-compose logs app -f` command to check app logs
   
-Go to `http://localhost:3000/docs` if swagger documentation is opened then setup is ok.  
+Go to `http://localhost:3000/docs` if swagger documentation is opened then setup is ok.
+
+Use `mongodb://localhost:27018` to access containerized db locally
 
 ### Swagger documentation
   
-You can use swagger docs page to test the app.  
+You can use Swagger docs page to test the app.  
   
-To create new user:  
+To create a new user:  
 1. go to User Controler sign-up router
-2. click **"try it out"**
-3. change username and password or use the default
+2. click **"Try it out"**
+3. change the username and password or use the default
 4. click **"execute"**  
   
 To login:
 1. go to User Controler sign-in router
-2. click **"try it out"**
-3. change username and password or use the default
+2. click **"Try it out"**
+3. change the username and password or use the default
 4. click **"execute"**  
 5. copy `token` from the response body
 6. click **"authorize"** at the top of the screen
-7. paste token to login field
+7. paste the token to the login field
 8. Done! Now you can use *protected* `events` API
 
 ### .env  
 
-Set **STRATEGY** variable in `.env` file to change default strategy  
+Set **STRATEGY** variable in `.env` file to change the default strategy  
 
-By default app contains 3 destination dictonaries (dictonaries from "TEST" paragraph of task), also
-you can add your custom json dictionaries to root folder.
-Set **DEFAULT_DESTINATIONS_JSON** variable in `.env` file with destination dictonary json file name *(without extension)*
+By default, the app contains 3 destination dictionaries (dictionaries from "TEST" paragraph of the task), also
+you can add your custom JSON dictionaries to the root folder.
+Set **DEFAULT_DESTINATIONS_JSON** variable in `.env` file with destination dictionary JSON file name *(without extension)*
 to change default destinations.
 
-Also you can check `payload.txt` file from the root of project, it contains test payloads in json format
+Also, you can check `payload.txt` file from the root of the project, it contains test payloads in JSON format
 
 
 
