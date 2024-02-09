@@ -17,6 +17,8 @@ Run `docker-compose build` to build the app
 Then run `dockor-compose up -d` to up the app  
   
 You need to run build and up commands after each code change.  
+
+Use `docker-compose logs app -f` command to check app logs
   
 Go to `http://localhost:3000/docs` if swagger documentation is opened then setup is ok.
 
