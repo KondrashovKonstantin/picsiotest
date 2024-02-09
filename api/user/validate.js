@@ -44,7 +44,8 @@ export const validateLogin = async (req, res, next) => {
 export const validateToken = async (req, res, next) => {
     try {
         const bareerToken = req.header('Authorization');
-        const [,token] = bareerToken.split(' ');
+        const splitedToken = bareerToken?.split?.(' ');
+        const token = splitedToken?.[1];
         if (!token) {
             throw new HttpError(401, `User should be logged in`);
         }    
